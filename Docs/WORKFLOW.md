@@ -133,7 +133,7 @@ git push origin feature/escenario-blocking
 
 ## Checklist de Integración
 
-### Antes de fusionar un Pull Request a `desarroll`:
+### Antes de fusionar un Pull Request a `develop`:
 
 - [ ] Código y assets compatibles con UE 5.6.1
 - [ ] El mapa principal carga sin errores
@@ -142,7 +142,7 @@ git push origin feature/escenario-blocking
 - [ ] README y documentación actualizados si es necesario
 - [ ] Commit de mensaje profesional y descriptivo
 
-### Después de fusionar a `desarroll`:
+### Después de fusionar a `develop`:
 
 - [ ] Verificar que el build en UE 5.6.1 aún funciona
 - [ ] Sincronizar repositorios locales de todos los integrantes

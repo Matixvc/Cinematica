@@ -11,7 +11,7 @@
 
 ### main
 - Rama estable y entregable
-- Solo se fusionan cambios aprobados desde `desarroll`
+- Solo se fusionan cambios aprobados desde `develop`
 - Representa la versión lista para producción
 
 ### develop
@@ -22,22 +22,22 @@
 ### feature/escenario-blocking
 - Trabajo en el escenario, landscape, blocking e integración técnica
 - Responsable: Matixvc
-- Base: `desarroll`
+- Base: `develop`
 
 ### feature/camaras
 - Desarrollo de cámaras, encuadres y secuencias cinematográficas
 - Responsable: Compañero 2
-- Base: `desarroll`
+- Base: `develop`
 
 ### feature/personajes
 - Personajes, materiales y preparación de recursos
 - Responsable: Compañero 3
-- Base: `desarroll`
+- Base: `develop`
 
 ### feature/animaciones
 - Animaciones y secuencias correspondientes
 - Responsable: Compañero 4
-- Base: `desarroll`
+- Base: `develop`
 
 ## Flujo de Trabajo
 
@@ -57,17 +57,17 @@ git checkout -b feature/escenario-blocking
 ```bash
 git push -u origin feature/escenario-blocking
 ```
-- Crear Pull Request hacia `desarroll`
+- Crear Pull Request hacia `develop`
 - Solicitar revisión de un compañero
 - Resolver conflictos antes de fusionar
 
 ### 4. Fusionar a develop
-- Una vez aprobado el PR, fusionar a `desarroll`
+- Una vez aprobado el PR, fusionar a `develop`
 - `git checkout develop && git pull origin develop && git merge --no-ff feature/escenario-blocking`
 - Eliminar la rama feature después de fusionar
 
 ### 5. Integración a main
-- Cuando `desarroll` esté estable y todas las features estén completadas
+- Cuando `develop` esté estable y todas las features estén completadas
 - `git checkout main && git pull origin main && git merge --no-ff develop`
 - Crear tag de versión si corresponde
 

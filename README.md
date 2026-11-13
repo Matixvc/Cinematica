@@ -38,7 +38,7 @@ Cinemática animada low-poly de aproximadamente 40 segundos que narra la histori
 
 ```bash
 # Clonar el repositorio
-git clone https://github.com/Matixvc/Cinematica-UE56.git
+git clone https://github.com/Matixvc/Cinematica.git
 
 # Descargar recursos LFS
 git lfs pull
@@ -82,8 +82,8 @@ git lfs pull
 
 **Reglas**:
 - No permitir que todos editen simultáneamente Escena.umap o LS_Cinematica_Final.uasset
-- Utilizar Pull Requests hacia `desarroll`
-- Integración de `desarroll` hacia `main` cuando el proyecto esté estable
+- Utilizar Pull Requests hacia `develop`
+- Integración de `develop` hacia `main` cuando el proyecto esté estable
 - Utilizar Git LFS locking para archivos binarios compartidos cuando sea adecuado
 - Secuencias de animación independientes para evitar conflictos
 
