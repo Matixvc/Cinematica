@@ -1,0 +1,77 @@
+# Unreal Engine 5 Project - .gitignore
+# Generated for Cinematica UE5.6.1 project
+
+# Build outputs
+/Binaries/
+/Intermediate/
+/Saved/
+/DerivedDataCache/
+
+# Visual Studio
+/.vs/
+*.csproj.user
+*.sln
+*.sln.fallback
+
+# Visual Studio toplevel entries
+*.suo
+*.tld
+*_tmp.sln
+
+# OS generated files
+.DS_Store
+.DS_Store?
+/EOF
+/ehthumbs.db
+/Thumbs.db
+
+# Windows specific
+/*.exe
+/*.dll
+/*.exp
+/*.lib
+
+# Pak files (generated at cook)
+/*.pak
+
+# Cache and logs
+/Cooked/
+/Cache/
+/Logs/
+/CrashReports/
+
+# User specific settings
+/Cinematica/Config/Localization/
+/Cinematica/Config/DefaultEngine.ini
+/Cinematica/Config/Input.ini
+/Cinematica/Config/SavedSettings/
+
+# Epic Launcher generated
+/*.user
+/*.uproject.user
+
+# Pak chunk list
+/PakChunkList*.txt
+
+# UnrealHeaderTool
+/UnrealHeaderTool/
+/UnrealHeaderTool*.txt
+
+# Git LFS tracking
+# Track Large Files with Git LFS
+*.uasset filter=lfs
+*.umap filter=lfs
+*.fbx filter=lfs
+*.blend filter=lfs
+*.psd filter=lfs
+*.exr filter=lfs
+*.wav filter=lfs
+*.mkv filter=lfs
+*.mp4 filter=lfs
+
+# Levels and Sequences - keep these as LFS
+*.uasset filter=lfs
+*.umap filter=lfs
+
+# Important: Don't git lfs track these if they are small projects or already in repo
+# Only add to lfs if the files are large (typically > 10MB for Unreal assets)
