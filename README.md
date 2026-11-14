@@ -38,7 +38,7 @@ Cinemática animada low-poly de aproximadamente 40 segundos que narra la histori
 
 ```bash
 # Clonar el repositorio
-git clone https://github.com/Matixvc/Cinematica-UE56.git
+git clone https://github.com/Matixvc/Cinematica.git
 
 # Descargar recursos LFS
 git lfs pull
@@ -62,30 +62,99 @@ git lfs pull
 /Config/                  # Configuración del proyecto
 /Cinematica.uproject     # Archivo principal del proyecto
 
-## Equipo y Responsabilidades
+### Proyecto
 
-| Integrante | Responsabilidad |
-|------------|-----------------|
-| Matixvc | Escenario, blocking e integración técnica |
-| Compañero 2 | Cámaras, encuadres y cinematografía |
-| Compañero 3 | Personajes, materiales y preparación de recursos |
-| Compañero 4 | Animaciones y secuencias correspondientes |
+La casita del perro — Cinemática de animación 3D low-poly sobre la relación familiar entre un padre y su hijo.
+
+Unreal Engine 5.6.1.
+Duración: 45 segundos.
+Frecuencia: 24 fps.
+Total: 1080 frames.
+11 planos cinematográficos.
+
+### Responsabilidades
+
+- Matias: escenario, blocking y cámaras CAM00, CAM01, CAM02, CAM03, CAM03.1 y CAM04.
+- Compañero 1: cámaras CAM05, CAM05.1, CAM06, CAM07 y CAM08.
+- Compañeros 2 y 3: personajes y animaciones. Propuesta de división: padre e hijo respectivamente, con coordinación de objetos interactivos.
+
+### Documentación
+
+- Docs/Escaleta_01_Camaras.docx
+- Docs/Escaleta_02_Animaciones.docx
+- Docs/GUIA_COLABORACION.md
+
+### Timeline compartida
+
+| Plano | Tiempo |
+|---|---|
+| CAM00 | 0–3 s |
+| CAM01 | 3–8 s |
+| CAM02 | 8–12 s |
+| CAM03 | 12–18 s |
+| CAM03.1 | 18–19 s |
+| CAM04 | 19–25 s |
+| CAM05 | 25–28 s |
+| CAM05.1 | 28–29 s |
+| CAM06 | 29–33 s |
+| CAM07 | 33–39 s |
+| CAM08 | 39–45 s |
 
 ## Flujo de Trabajo
 
-1. **main**: Rama estable y entregable. Solo se fusionan cambios aprobados desde `develop`.
-2. **desarroll**: Integración de los avances de los cuatro integrantes. Los feature branches se fusionan aquí.
-3. **feature/escenario-blocking**: Trabajo en el escenario, landscape, blocking e integración técnica.
-4. **feature/camaras**: Desarrollo de cámaras, encuadres y secuencias cinematográficas.
-5. **feature/personajes**: Personajes, materiales y preparación de recursos.
-6. **feature/animaciones**: Animaciones y secuencias correspondientes.
+### Ramas existentes y responsables definitivos
+
+El repositorio tiene tres ramas feature principales más `develop` y `main`:
+
+| Rama | Responsable | Área |
+|---|---|---|
+| **feature/escenario-blocking** | Matias | Escenario, landscape, blocking e integración técnica |
+| **feature/camaras** | Compañero 1 | Cámaras, encuadres y secuencias cinematográficas (CAM00-CAM08) |
+| **feature/animaciones** | Compañeros 2 y 3 | Personajes y animaciones. División: padre (Compañero 2) e hijo (Compañero 3) con coordinación de objetos interactivos |
+| **develop** | Equipo integrado | Integración de avances de las tres feature branches |
+| **main** | Equipo / Producción | Versión estable y entregable para publicación |
+
+### Flujo de trabajo por rama
+
+**feature/escenario-blocking** (Matias):
+- Base: `develop`
+- Trabajar en escenario, landscape, blocking técnico
+- Cuidado con Escena.umap: usar Git LFS lock al editar
+- Pull Request hacia `develop` tras completar bloqueo
+
+**feature/camaras** (Compañero 1):
+- Base: `develop`
+- Desarrollo de todas las cámaras CAM00 a CAM08
+- Trabajar en LS_Cameras_45s.uasset con LFS lock
+- Secuencias de cámara en subsecuencias separadas
+- Pull Request hacia `develop` tras finalizar secuencias
+
+**feature/animaciones** (Compañeros 2 y 3):
+- Base: `develop`
+- **Compañero 2**: Animación del padre - subsecuencia independiente
+- **Compañero 3**: Animación del hijo - subsecuencia independiente
+- Coordinación requerida para objetos interactivos
+- Evitar editar simultáneamente las mismas pistas de animación
+- Utilizar nombres únicos para variantes
+- Pull Request hacia `develop` tras completar animaciones
+
+### Flujo completo
+
+1. Cada integrante parte de `develop`: `git checkout develop && git pull origin develop`
+2. Crear rama específica o trabajar en la existente
+3. Realizar cambios con `git lfs lock <archivo>` para archivos binarios críticos
+4. Commit con mensajes descriptivos
+5. Subir y crear Pull Request hacia `develop`
+6. Revisión y fusión a `develop`: `git checkout develop && git pull origin develop && git merge --no-ff <rama>`
+7. Integración a `main` cuando `develop` esté estable
 
 **Reglas**:
 - No permitir que todos editen simultáneamente Escena.umap o LS_Cinematica_Final.uasset
-- Utilizar Pull Requests hacia `desarroll`
-- Integración de `desarroll` hacia `main` cuando el proyecto esté estable
+- Utilizar Pull Requests hacia `develop`
+- Integración de `develop` hacia `main` cuando el proyecto esté estable
 - Utilizar Git LFS locking para archivos binarios compartidos cuando sea adecuado
 - Secuencias de animación independientes para evitar conflictos
+- Preferir subsecuencias sobre edición directa en LS_Cinematica_Final.uasset
 
 ## Estado del Proyecto
 
